@@ -8,12 +8,9 @@ module DialogLkEsms
     MessageText = Types::String.constrained(min_size: 1)
     SourceAddr = Types::String.constrained(min_size: 1)
     
-    
     StatusCode = Types::String
     
-    
     Balance = Types::Decimal | Types::Float | Types::Coercible::Decimal | Types::Coercible::Float
-    
     
     ResponseStruct = Types::Hash.schema(
       code: StatusCode,

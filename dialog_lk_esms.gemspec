@@ -14,11 +14,12 @@ Gem::Specification.new do |spec|
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
 
-  spec.metadata["allowed_push_host"] = " Set to your gem server 'https://example.com'"
+  # Allow pushing to RubyGems.org
+  spec.metadata["allowed_push_host"] = "https://rubygems.org"
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/sdglhm/dialog_lk_esms"
-  spec.metadata["changelog_uri"] = "https://github.com/sdglhm/dialog_lk_esms"
+  spec.metadata["changelog_uri"] = "https://github.com/sdglhm/dialog_lk_esms/blob/main/CHANGELOG.md"
 
   spec.add_dependency "dry-configurable", "~> 1.0"
   spec.add_dependency "dry-types", "~> 1.0"
@@ -28,7 +29,7 @@ Gem::Specification.new do |spec|
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
   spec.files = Dir.chdir(__dir__) do
     `git ls-files -z`.split("\x0").reject do |f|
-      (f == __FILE__) || f.match(%r{\A(?:(?:bin|test|spec|features)/|\.(?:git|travis|circleci)|appveyor)})
+      (f == __FILE__) || f.match(%r{\A(?:(?:bin|test|spec|features)/|\.(?:git|travis|circleci)|appveyor)}) || f.end_with?('.gem')
     end
   end
   spec.bindir = "exe"

@@ -17,5 +17,4 @@ module DialogLkEsms
   def self.client(api_key:, base_url: "https://e-sms.dialog.lk/api/v1")
     Client.new api_key: api_key, base_url: base_url
   end
-
 end
